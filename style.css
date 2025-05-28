@@ -42,7 +42,7 @@ body, h1, h2, p, ul {
   
   form input[type="text"],
   form input[type="password"] {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     margin: 6px 0 12px;
     border: 1px solid #ccc;
