@@ -10,7 +10,45 @@
     <body>
         <header>
             <h1>VPN Project</h1>
+            <p>By Declan Harbord (34633583)</p>
         </header>
     </body>
+
+    <main>
+        <section class="card">
+            <h2>Add New Client</h2>
+            <form action="/add-user" method="POST">
+              <input type="text" name="username" placeholder="Client Username" required />
+              <button type="submit">Generate Config</button>
+            </form>
+          </section>
+      
+          <section class="card">
+            <h2>Revoke Client</h2>
+            <form action="/revoke-user" method="POST">
+              <input type="text" name="username" placeholder="Client Username" required />
+              <button type="submit">Revoke Access</button>
+            </form>
+          </section>
+      
+          <section class="card">
+            <h2>Download Config</h2>
+            <form action="/download" method="GET">
+              <input type="text" name="username" placeholder="Client Username" required />
+              <button type="submit">Download .ovpn</button>
+            </form>
+          </section>
+      
+          <section class="card">
+            <h2>VPN Server Status</h2>
+            <div class="status">
+              <p><strong>Status:</strong> <span id="vpn-status">Running</span></p>
+              <p><strong>Connected Clients:</strong></p>
+              <ul id="client-list">
+                
+              </ul>
+            </div>
+        </section>
+    </main>
 
 </html>
