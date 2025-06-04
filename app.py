@@ -51,14 +51,14 @@ def dashboard():
 @login_required
 def add_user():
     username = request.form['username']
-    subprocess.run(['sudo', './scripts/add-client.sh', username])
+    subprocess.run(['sudo', '/home/ubuntu/scripts/add-client.sh', username])
     return redirect('/dashboard')
 
 @app.route('/revoke-user', methods=['POST'])
 @login_required
 def revoke_user():
     username = request.form['username']
-    subprocess.run(['sudo', './scripts/revoke-client.sh', username])
+    subprocess.run(['sudo', '/home/ubuntu/scripts/revoke-client.sh', username])
     return redirect('/dashboard')
 
 @app.route('/download/<username>')
