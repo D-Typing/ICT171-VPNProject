@@ -30,11 +30,21 @@
         </section>
 
         <section class="card">
-            <h2>Download Config</h2>
-            <form action="" method="GET" onsubmit="return downloadConfig(this);">
-                <input type="text" name="username" placeholder="Client Username" required />
-                <button type="submit">Download .ovpn</button>
-            </form>
+            <h2>Download Client Configs</h2>
+            {% if clients %}
+                <ul>
+                    {% for client in clients %}
+                        <li>
+                            {{ client }}
+                            <a href="{{ url_for('download', username=client) }}">
+                                <button type="button">Download</button>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No clients found.</p>
+            {% endif %}
         </section>
 
         <section class="card">
@@ -51,14 +61,5 @@
             </div>
         </section>
     </main>
-
-    <script>
-        function downloadConfig(form) {
-            const username = form.username.value;
-            if (!username) return false;
-            window.location.href = `/download/${encodeURIComponent(username)}`;
-            return false; // prevent default form submission
-        }
-    </script>
 </body>
 </html>
