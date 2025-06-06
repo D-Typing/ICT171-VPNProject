@@ -6,10 +6,10 @@
 |____/ \___/ \___|\__,_|_| |_| |_|\___|_| |_|\__\__,_|\__|_|\___/|_| |_|
 
 ```
+## By Declan Harbord (34633583)
 
 # Overview #
-This is the documentation for the ICT171 Assingment 2 VPN Project.
-
+This is the documentation for the ICT171 Assignment 2 Project. The project is for a VPN client manager that can be used to create files that can then be used with the open source software Open VPN inorder to create a vpn connection. This documentation outlines the complete steps for the creation and usage of the VPN client manager. 
 
 # AWS EC2 Server Setup #
 
@@ -77,7 +77,7 @@ home/ubuntu/
 ```
 
 ## Create Directories ##
-Enter the following commands:
+To create the directories enter the following commands:
 ```
     mkdir templates
     mkdir static
@@ -102,21 +102,21 @@ In the following directories create the scripts by entering the following comman
 ```
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>VPN Login</title>
-  <link rel="stylesheet" href="../static/style.css">
-</head>
-<body class="login-body">
-  <div class="login-container">
-    <h2>Admin Login</h2>
-    <form action="/login" method="POST">
-      <input type="text" name="username" placeholder="Username" required />
-      <input type="password" name="password" placeholder="Password" required />
-      <button type="submit">Login</button>
-    </form>
-  </div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>VPN Login</title>
+        <link rel="stylesheet" href="../static/style.css">
+    </head>
+    <body class="login-body">
+        <div class="login-container">
+            <h2>Admin Login</h2>
+            <form action="/login" method="POST">
+            <input type="text" name="username" placeholder="Username" required />
+            <input type="password" name="password" placeholder="Password" required />
+            <button type="submit">Login</button>
+            </form>
+        </div>
+    </body>
 </html>
 ```
 
@@ -465,6 +465,8 @@ sudo systemctl start vpnsite
 Check the site is running with this command:
 `sudo systemctl status vpnsite`
 
+**NOTE:** It still will not be able to run yet as it is currently only connected to the loopback address.
+
 # Domain Creation #
 
 #### Step One ####
@@ -477,7 +479,7 @@ Check the site is running with this command:
     * The choose the previous record as the endpoint
 
 #### Step Two ####
-Enter the following commands
+To set up ngninx enter the following commands
 ```
 sudo apt install nginx
 sudo nano /etc/nginx/sites-available/vpn
@@ -499,7 +501,7 @@ server {
 ```
 
 #### Step Three ####
-Enter the following commands:
+Enable access through the following commands:
 ```
 sudo ln -s /etc/nginx/sites-available/vpnsite /etc/nginx/sites-enabled/
 sudo nginx -t
@@ -509,7 +511,7 @@ sudo systemctl reload nginx
 The domain should now be able to be used to enter the site.
 
 # Security Certification #
-Enter the following commands:
+Add certification through the following commands:
 ```
 sudo apt install certbot python3-certbot-nginx
 sudo certbot --nginx -d yourdomain.com
@@ -532,5 +534,3 @@ Three buttons are present allowing for the creation of a user by typing their na
 * Go to openvpn’s website and install the vpn client launcher for the specific operating system: https://openvpn.net/client/ 
 * When downloaded open and select ‘Upload File’ 
 * Drag the .ovpn file from you computer into it to start the vpn 
-
-# Conclusion #
