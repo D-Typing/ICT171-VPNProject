@@ -44,7 +44,7 @@ Create an instance with the following specifications
 ## Install Packages ##
 
 #### Step One: ####
-Type the following commands in to install the packages that will be needed: \
+Type the following commands in to install the packages that will be needed: 
 ```
 sudo apt update
 sudo apt install openvpn easy-rsa 
@@ -471,7 +471,7 @@ Check the site is running with this command:
 
 #### Step One ####
 * Register a domain through the site Route 53 by selectng a name and TLD
-* This may take a monent to verify upon checking out
+* This may take a moment to verify upon checking out
 * With this domain create a new hosted zone
 * In the domain create two records:
     * The first one will have no subdomain and the value is the public IP address
@@ -479,7 +479,7 @@ Check the site is running with this command:
     * The choose the previous record as the endpoint
 
 #### Step Two ####
-To set up ngninx enter the following commands
+To set up nginx enter the following commands
 ```
 sudo apt install nginx
 sudo nano /etc/nginx/sites-available/vpn
