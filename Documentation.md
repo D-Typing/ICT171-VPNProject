@@ -419,7 +419,6 @@ echo "User '$USERNAME' revoked."
 ## Set Script Permissions ##
 To ensure the scripts run on the site enter the following commands:
 ```
-sudo mkdir -p /home/ubuntu/users
 sudo chown -R ubuntu:ubuntu /home/ubuntu/users
 chmod +x scripts/*.sh
 ```
