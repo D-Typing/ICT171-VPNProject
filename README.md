@@ -38,7 +38,8 @@ Create an instance with the following specifications
 * The rest can be left as their default configurations
 
 #### Step Three: ####
-* Open up a terminal (or whatever equivalent based on the operating system) in the location of the previously created key pair 
+* Open up a terminal (or whatever equivalent based on the operating system) in the location of the previously created key pair
+* Give the key executable permissions
 * Insert the following command to externally connect to the server: \
     `ssh -i "KeyName.pem" ubuntu@ec2-3-107-72-28.ap-southeast-2.compute.amazonaws.com`
 * Clicking on the connect instance button will show a pasteable version specifically tailored to the server name 
