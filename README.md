@@ -561,4 +561,8 @@ Three buttons are present allowing for the creation of a user by typing their na
 # .OVPN Usage #
 * Go to openvpn’s website and install the vpn client launcher for the specific operating system: https://openvpn.net/client/ 
 * When downloaded open and select ‘Upload File’ 
-* Drag the .ovpn file from you computer into it to start the vpn 
+* Drag the .ovpn file from you computer into it to start the vpn \
+
+# Limitations #
+
+Although the site functionality works properly there is currently an issue with the .ovpn files themselves where they are misconfigured making them unable to actually work with the client launcher. Future iterations will improve upon this but as of submission/marking time it is not functional.
