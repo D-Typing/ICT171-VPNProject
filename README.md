@@ -511,7 +511,7 @@ Check the site is running with this command:
 To set up nginx enter the following commands
 ```
 sudo apt install nginx
-sudo nano /etc/nginx/sites-available/vpn
+sudo nano /etc/nginx/sites-available/vpnsite
 ```
 
 Paste this text into the file:
