@@ -102,6 +102,10 @@ In the following directories create the scripts by entering the following comman
 
 ## templates/login.html ##
 ```
+<!--
+This file create the site login page. The login page contains an area for the user to 
+input a username and a password. It is also connected to a stylesheet for the visuals.
+-->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -124,6 +128,11 @@ In the following directories create the scripts by entering the following comman
 
 ## templates/index.html ##
 ```
+<!--
+This files creates the dashboard for the site. The dashboard contains buttons for creating 
+users, revoking users and downloading their files. Along with this it will show the current 
+users that are in the system in a list.
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -196,6 +205,11 @@ In the following directories create the scripts by entering the following comman
 
 ## static/style.css ##
 ```
+/*
+This is the stylesheet that is used for the different site pages. It keeps the content
+to a blue, black and white color pallete and sizes the text to fill the screen.
+*/
+
   /* General Reset */
   body, h1, h2, p, ul {
     margin: 0;
@@ -296,6 +310,11 @@ In the following directories create the scripts by entering the following comman
 
 ## app.py ##
 ```
+# This is the main script that handles the site functionality. It contains functions for 
+# logging in and out of the site, adding a new user, revoking a current user and
+# downloading a user's configuration file. It does this through using the flask package
+# to connect the html and bash files together.
+
 from flask import Flask, render_template, request, redirect, send_file, url_for, session
 import subprocess, os
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user
@@ -376,6 +395,9 @@ if __name__ == '__main__':
 ```
 #!/bin/bash
 
+# Bash script will check if there is a client of that username. If there is not 
+# then it will create a .ovpn file with that name based on the client-template file.
+
 USERNAME=$1
 cd /etc/openvpn/easy-rsa || exit 1
 
@@ -398,6 +420,11 @@ echo "[+] Configuration for '$USERNAME' created at $OVPN_FILE"
 ## scripts/revoke-client.sh ##
 ```
 #!/bin/bash
+
+# Bash script will check if there is a client with the inputted 
+# username and if so then it will find and delete the client 
+# certificate status along with removing them from the system.
+
 USERNAME=$1
 cd /etc/openvpn/easy-rsa || exit 1
 
