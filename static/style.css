@@ -1,4 +1,9 @@
-  /* General Reset */
+/*
+This is the stylesheet that is used for the different site pages. It keeps the content
+to a blue, black and white color pallete and sizes the text to fill the screen.
+*/
+
+/* General Reset */
   body, h1, h2, p, ul {
     margin: 0;
     padding: 0;

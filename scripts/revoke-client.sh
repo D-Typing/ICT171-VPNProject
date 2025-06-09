@@ -1,4 +1,9 @@
 #!/bin/bash
+
+# Bash script will check if there is a client with the inputted 
+# username and if so then it will find and delete the client 
+# certificate status along with removing them from the system.
+
 USERNAME=$1
 cd /etc/openvpn/easy-rsa || exit 1
 

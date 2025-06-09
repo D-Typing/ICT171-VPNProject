@@ -1,3 +1,8 @@
+# This is the main script that handles the site functionality. It contains functions for 
+# logging in and out of the site, adding a new user, revoking a current user and
+# downloading a user's configuration file. It does this through using the flask package
+# to connect the html and bash files together.
+
 from flask import Flask, render_template, request, redirect, send_file, url_for, session
 import subprocess, os
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user

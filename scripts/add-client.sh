@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Bash script will check if there is a client of that username. If there is not 
+# then it will create a .ovpn file with that name based on the client-template file
+
 USERNAME=$1
 cd /etc/openvpn/easy-rsa || exit 1
 
